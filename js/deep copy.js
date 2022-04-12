@@ -15,12 +15,16 @@ const deepFunc = () => {
 
     var deep = { a: 1, b: 2 }
     // 深拷貝
-    var deep2 = Object.assign({}, deep);
+    var deep2 = { ...deep }
 
-    deep2.a = 11
+    var deep3 = JSON.parse(JSON.stringify(deep))
+
+    deep.a = 99
+
+
 
     console.log('深拷貝');
-    console.log(deep, deep2);
+    console.log(deep, deep2, deep3);
 }
 
 shallowFunc();
